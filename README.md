@@ -84,27 +84,27 @@ var off = document.querySelectorAll('.sx-res-offerselect-wrapper.sx-res-offerlis
 
 <br/>
 
+<kbd>desktop n mobile variation</kbd>  :rocket:          
+
+![](/images/offerSelectVar1DesktopMobile.png)      
+
+<kbd>desktop control</kbd>  :rocket:         
+
+![](/images/desktop-control.png)      
+
+<kbd>mobile iphone6 control</kbd>  :rocket:          
+
+![](/images/iphone6-control.png)        
+
+<kbd>mobile iphone5 control</kbd>  :rocket:          
+
+![](/images/iphone5-control.png)        
+
+<kbd>desktop offerSelect control</kbd>  :rocket:          
+
+![](/images/offerSelectControlDesktop.png)      
 
 
-<kbd>desktop</kbd>  :rocket:     
-
-![](/images/desktop-control.png) 
-
-<kbd>mobile</kbd>  :rocket:     
-
-![](/images/iphone6-control.png)   :rocket: 
-
-<kbd>mobile</kbd>  :rocket:     
-
-![](/images/iphone5-control.png)   :rocket: 
-
-<kbd>desktop</kbd>  :rocket:     
-
-![](/images/offerSelectControlDesktop.png) 
-
-<kbd>desktop</kbd>  :rocket:     
-
-![](/images/offerSelectVar1DesktopMobile.png)   :rocket: 
 
 
 
