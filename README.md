@@ -37,10 +37,10 @@ https://www.sixt.com/php/reservation/customerdetails (copy change to follow thro
 
 ### notes
 __sitecatalyst_data object:__           
-- sitecatalyst_data.tpl => "offerselect"  :snake:       
-- sitecatalyst_data.channel => "Reservation-Pkw"  :snake:      
-- sitecatalyst_data.server => "www.sixt.com" :snake:        
-- sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect" :snake:       
+- sitecatalyst_data.tpl => "offerselect"  :snail:      
+- sitecatalyst_data.channel => "Reservation-Pkw"  :snail:      
+- sitecatalyst_data.server => "www.sixt.com" :snail:        
+- sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect" :snail:      
 
 ___window_satellite object:___ 
 - window._satellite.browserInfo.browser => "Chrome"  :snake:    
