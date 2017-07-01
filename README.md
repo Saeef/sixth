@@ -42,7 +42,7 @@ __sitecatalyst_data object:__
 - sitecatalyst_data.server => "www.sixt.com" :snake:        
 - sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect" :snake:       
 
-__window._satellite object__  
+___window._satellite object:___  
 - window._satellite.browserInfo.browser => "Chrome"  :snake:    
 - window._satellite.data.URI => "/php/reservation/offerselect"  :snake:      
 - window._satellite.detectBrowserInfo()  :snake:     
