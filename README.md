@@ -37,21 +37,21 @@ https://www.sixt.com/php/reservation/customerdetails (copy change to follow thro
 
 ### notes
 __sitecatalyst_data object:__           
-sitecatalyst_data.tpl => "offerselect"  :snake:       
-sitecatalyst_data.channel => "Reservation-Pkw"  :snake:      
-sitecatalyst_data.server => "www.sixt.com" :snake:        
-sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect" :snake:       
+- sitecatalyst_data.tpl => "offerselect"  :snake:       
+- sitecatalyst_data.channel => "Reservation-Pkw"  :snake:      
+- sitecatalyst_data.server => "www.sixt.com" :snake:        
+- sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect" :snake:       
 
 __window._satellite object__  
-window._satellite.browserInfo.browser => "Chrome"  :snake:    
-window._satellite.data.URI => "/php/reservation/offerselect"  :snake:      
-window._satellite.detectBrowserInfo()  :snake:     
-window._satellite.domReady();    :snake:   
-window._satellite.domReadyFired     => true or false  :snake:     
-window._satellite.loadEventBefore(t,e)  :snake:     
-window._satellite.pushAsyncScript(t)  :snake:     
-window._satellite.stringify(t,e)  :snake:      
-window._satellite.visibility.isVisible() => true  :snake:      
+- window._satellite.browserInfo.browser => "Chrome"  :snake:    
+- window._satellite.data.URI => "/php/reservation/offerselect"  :snake:      
+- window._satellite.detectBrowserInfo()  :snake:     
+- window._satellite.domReady();    :snake:   
+- window._satellite.domReadyFired     => true or false  :snake:     
+- window._satellite.loadEventBefore(t,e)  :snake:     
+- window._satellite.pushAsyncScript(t)  :snake:     
+- window._satellite.stringify(t,e)  :snake:      
+- window._satellite.visibility.isVisible() => true  :snake:      
  
 
 ### id wraps everything
