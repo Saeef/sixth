@@ -36,22 +36,22 @@ https://www.sixt.com/php/reservation/customerdetails (copy change to follow thro
 - Results with one single price option to be included .          
 
 ### notes
-sitecatalyst_data object:           
-sitecatalyst_data.tpl => "offerselect" .       
-sitecatalyst_data.channel => "Reservation-Pkw" .      
-sitecatalyst_data.server => "www.sixt.com" .        
-sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect" .       
+__sitecatalyst_data object:__           
+sitecatalyst_data.tpl => "offerselect"  :snake:       
+sitecatalyst_data.channel => "Reservation-Pkw"  :snake:      
+sitecatalyst_data.server => "www.sixt.com" :snake:        
+sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect" :snake:       
 
-window._satellite object .     
-window._satellite.browserInfo.browser => "Chrome" .      
-window._satellite.data.URI => "/php/reservation/offerselect" .      
-window._satellite.detectBrowserInfo() .     
-window._satellite.domReady();       
-window._satellite.domReadyFired     => true or false .     
-window._satellite.loadEventBefore(t,e) .     
-window._satellite.pushAsyncScript(t) .     
-window._satellite.stringify(t,e) .      
-window._satellite.visibility.isVisible() => true .      
+__window._satellite object__  
+window._satellite.browserInfo.browser => "Chrome"  :snake:    
+window._satellite.data.URI => "/php/reservation/offerselect"  :snake:      
+window._satellite.detectBrowserInfo()  :snake:     
+window._satellite.domReady();    :snake:   
+window._satellite.domReadyFired     => true or false  :snake:     
+window._satellite.loadEventBefore(t,e)  :snake:     
+window._satellite.pushAsyncScript(t)  :snake:     
+window._satellite.stringify(t,e)  :snake:      
+window._satellite.visibility.isVisible() => true  :snake:      
  
 
 ### id wraps everything
