@@ -55,24 +55,19 @@ window._satellite.visibility.isVisible() => true .
  
 
 ### id wraps everything
-======================
-id for items inc form =>  sx-offerselect-offerlist-wrapper  (everything wrapped here)
+- id for items inc form =>  sx-offerselect-offerlist-wrapper  (everything wrapped here)
 
 ### form above items
-==================
-document.forms.offer_request_config  (form above items)
+- document.forms.offer_request_config  (form above items)
 
 ### recommended item if it exist first one
-========================================
-var rec = document.querySelector('.sx-res-offerselect-special-wrapper');      (recommended item)
+- var rec = document.querySelector('.sx-res-offerselect-special-wrapper');      (recommended item)
 
 ### all other items except for recommended
-========================================
-var off = document.querySelectorAll('.sx-res-offerselect-wrapper.sx-res-offerlist-wrapper');
+- var off = document.querySelectorAll('.sx-res-offerselect-wrapper.sx-res-offerlist-wrapper');
 
 
 #### OfferSelect
-
 - Prices placed side by side - pay now placed on the right
 - Removed grey boxes around price types
 - Changed the copy in orange text above the price
