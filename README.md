@@ -54,20 +54,20 @@ ___window_satellite object:___
 - window._satellite.visibility.isVisible() => true  :snake:      
  
 
-### id wraps everything
+### id wraps everything . :ledger:
 - id for items inc form =>  sx-offerselect-offerlist-wrapper  (everything wrapped here)
 
-### form above items
+### form above items .  :ledger:
 - document.forms.offer_request_config  (form above items)
 
-### recommended item if it exist first one
+### recommended item if it exist first one :ledger:
 - var rec = document.querySelector('.sx-res-offerselect-special-wrapper');      (recommended item)
 
-### all other items except for recommended
+### all other items except for recommended :ledger:
 - var off = document.querySelectorAll('.sx-res-offerselect-wrapper.sx-res-offerlist-wrapper');
 
 
-#### OfferSelect
+#### OfferSelect :ledger:
 - Prices placed side by side - pay now placed on the right
 - Removed grey boxes around price types
 - Changed the copy in orange text above the price
