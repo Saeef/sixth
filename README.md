@@ -26,101 +26,82 @@ https://www.sixt.com/php/reservation/customerdetails (copy change to follow thro
 ### other     
 - Include both cars and trucks. Same URL, but pages can be identified by:
 					
-											ctyp = P      //for cars
-											ctyp = L      //for trucks
+	ctyp = P      //for cars
+	ctyp = L      //for trucks
 
 - Reliable identifier for test page:
 
 	pn = "Reservation-Pkw-Offerselect"
 
-- Results with one single price option to be included
+- Results with one single price option to be included .          
 
 ### notes
-sitecatalyst_data object:
-sitecatalyst_data.tpl => "offerselect"
-sitecatalyst_data.channel => "Reservation-Pkw"
-sitecatalyst_data.server => "www.sixt.com"
-sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect"
+__sitecatalyst_data object:__           
+- sitecatalyst_data.tpl => "offerselect"  :snail:      
+- sitecatalyst_data.channel => "Reservation-Pkw"  :snail:      
+- sitecatalyst_data.server => "www.sixt.com" :snail:        
+- sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect" :snail:      
 
-window._satellite object
-window._satellite.browserInfo.browser => "Chrome"
-window._satellite.data.URI => "/php/reservation/offerselect"
-window._satellite.detectBrowserInfo()
-window._satellite.domReady();
-window._satellite.domReadyFired     => true or false
-window._satellite.loadEventBefore(t,e)
-window._satellite.pushAsyncScript(t)
-window._satellite.stringify(t,e)
-window._satellite.visibility.isVisible() => true
+___window_satellite object:___ 
+- window._satellite.browserInfo.browser => "Chrome"  :snake:    
+- window._satellite.data.URI => "/php/reservation/offerselect"  :snake:      
+- window._satellite.detectBrowserInfo()  :snake:     
+- window._satellite.domReady();    :snake:   
+- window._satellite.domReadyFired     => true or false  :snake:     
+- window._satellite.loadEventBefore(t,e)  :snake:     
+- window._satellite.pushAsyncScript(t)  :snake:     
+- window._satellite.stringify(t,e)  :snake:      
+- window._satellite.visibility.isVisible() => true  :snake:      
+ 
 
+### id wraps everything . :ledger:
+- id for items inc form =>  sx-offerselect-offerlist-wrapper  (everything wrapped here)
 
-//id wraps everything
-======================
-id for items inc form =>  sx-offerselect-offerlist-wrapper  (everything wrapped here)
+### form above items .  :ledger:
+- document.forms.offer_request_config  (form above items)
 
-//form above items
-==================
-document.forms.offer_request_config  (form above items)
+### recommended item if it exist first one :ledger:
+- var rec = document.querySelector('.sx-res-offerselect-special-wrapper');      (recommended item)
 
-//recommended item if it exist first one
-========================================
-var rec = document.querySelector('.sx-res-offerselect-special-wrapper');      (recommended item)
-
-//all other items except for recommended
-========================================
-var off = document.querySelectorAll('.sx-res-offerselect-wrapper.sx-res-offerlist-wrapper');
+### all other items except for recommended :ledger:
+- var off = document.querySelectorAll('.sx-res-offerselect-wrapper.sx-res-offerlist-wrapper');
 
 
-#### OfferSelect
-
+#### OfferSelect :ledger:
 - Prices placed side by side - pay now placed on the right
 - Removed grey boxes around price types
 - Changed the copy in orange text above the price
--		FREE CANCELLATION changed to STAY FLEXIBLE
--		OUR LOWEST RATE changed to 	SAVE X% EACH DAY
+-	FREE CANCELLATION changed to STAY FLEXIBLE
+-	OUR LOWEST RATE changed to 	SAVE X% EACH DAY
 
 
 
---more fixes:
-- mouse in and out shopping bag image to view basket summary
-- cookie banner changes and basket summary position
-- add to cta button positions basket summary under shopping bag image whatever browser screen width
-  (it does not suppose to resize on the fly)
-- list items collected with promises
-- /page/basket => comes up when you click on 'proceed to checkout' (previous page)
-  If you decide not to go with that, (because 'interferes' with site overlay), then remove line [51-54] and basket summary will only show on mouse over in this page.
-- 'super user friendly' => mouse out basket to hide basket summary  
-- line 28 => adds conditional statment for engrave me cta (so that popup wont appear under site's popup)	
 
 <br/>
 
+<kbd>desktop n mobile variation</kbd>  :rocket:          
 
+![](/images/offerSelectVar1DesktopMobile.png)      
 
-<kbd>desktop</kbd>  :rocket:     
+<kbd>desktop control</kbd>  :rocket:         
 
-![](/images/) 
+![](/images/desktop-control.png)      
 
-<kbd>desktop</kbd>  :rocket:     
+<kbd>mobile iphone6 control</kbd>  :rocket:          
 
-![](/images/) 
+![](/images/iphone6-control.png)        
 
-:rocket: 
-<hr/>
+<kbd>mobile iphone5 control</kbd>  :rocket:          
 
-![](/images/screen1.png)
+![](/images/iphone5-control.png)        
 
-<hr/>
-:rocket: 
+<kbd>desktop offerSelect control</kbd>  :rocket:          
 
-![](/images/screen2.png)
-
-<hr>
-:rocket: 
-
-![](/images/screen3.png)
+![](/images/offerSelectControlDesktop.png)      
 
 
 
 
 
-# sixth
+
+
