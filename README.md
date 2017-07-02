@@ -100,6 +100,11 @@ ___window_satellite object:___
 ![](/images/offerSelectControlDesktop.png)      
 
 
+<kbd>desktop offerSelect second layout for when a single option its only available</kbd>  :rocket:          
+
+![](/images/secondOption.png)      
+
+
 
 
 
