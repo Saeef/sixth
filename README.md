@@ -104,6 +104,11 @@ ___window_satellite object:___
 
 ![](/images/secondOption.png)      
 
+<kbd>variation desktop - normal layout</kbd>  :rocket:          
+
+![](/images/variation-desktop.png)      
+
+
 
 
 
