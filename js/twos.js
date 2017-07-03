@@ -1,17 +1,24 @@
 (function(andRedEyelikeSixt, undefined) {
     var $ = window.jQuery;
     var SL = {};
+    var reg;
     SL.andRedEyelikeSixt = {
         init: function() { 
             this.pgCssDesktop();
-            this.listRO();      
+            if(window._satellite.data.URI === "/php/reservation/offerselect") {
+                this.listRO();
+                this.payOggi();
+            }
+            else if(window._satellite.data.URI === "/php/reservation/offerconfig") {
+                this.pageNome();       
+            }   
         },
         //init
 
         pgCssDesktop: function() {
             console.info('%c pgCssDesktop \u221a', 'background:blue;color:white;');
             //@990px min-width mediaQuerie
-            var mainCss = "@media screen and (max-width:380px) { .fortyfive {width:45% !important; margin-left:0px !important;} span.price-section__left__dayprice {font-size:22px !important;} .offerselect-list .offerselect-tile .right .price h4 { font-size: 14px !important;}  .offerselect-list .offerselect-tile .right .sx-gc-button-cta-list { min-width:130px !important; }   } @media screen and (max-width:650px) { div.price-section.price-section--flex.pnrec {width:40%; float:right; margin-right:24px;  } div.price-section.price-section--prpd.plrec {width:40%; float:left; } div.price-section__left.sin { width:100% !important; } div.price-section__right.des { width:86% !important; padding-left:0 !important; margin-top:12px; } .offerselect-list .offerselect-tile .right .price .price-section {border:0;} .offerselect-list .offerselect-tile .right .sx-gc-button-cta-list {min-width:140px;} .offerselect-list .offerselect-tile .right .price .price-section__button {float:left;} .offerselect-list .offerselect-tile .right .price .price-section--prpd {margin-top:0;} } @media screen and (min-width:990px) {  .fortyfive {width:45% !important; margin-left:16px !important;}  #t3-js-main div.price-section.price-section--flex.pnrec {width:42%; display:inline-block; margin-top:3px; border:0;padding:0; float:right;} #t3-js-main div.price-section.price-section--prpd.plrec {width:50%; display:inline-block; margin-top:3px; border:0;padding:0;}  #t3-js-main div.price-section__left.sin {float:right; width:100%; padding:0;} #t3-js-main div.price-section__right.des {float:left; width:100%; padding:0;} .offerselect-list .offerselect-tile .right .price .price-section__left__dayprice {font-size:23px;} .offerselect-list .offerselect-tile .right .price h4 {padding-bottom:10px;} .offerselect-list .offerselect-tile .right .price .price-section__left__overallprice {padding:12px 0;} .offerselect-list .offerselect-tile .left .carimage {width:240px; height:137px;} .offerselect-list .offerselect-tile .center {width: 25.3%;} .offerselect-list .offerselect-tile .right {width:42%; margin-left:1.5em;}    } .cien {width:100% !important; margin-top:10% !important;} .fifty {width:50% !important; float:left !important;} .cienleft {float:left !important; width:100% !important; margin-top:10% !important;}  ";
+            var mainCss = "@media screen and (max-width:380px) { .fortyfive {width:45% !important; margin-left:0px !important;} span.price-section__left__dayprice {font-size:22px !important;} .offerselect-list .offerselect-tile .right .price h4 { font-size: 14px !important;}  .offerselect-list .offerselect-tile .right .sx-gc-button-cta-list { min-width:130px !important; }   } @media screen and (max-width:650px) { div.price-section.price-section--flex.pnrec {width:40%; float:right; margin-right:24px;  } div.price-section.price-section--prpd.plrec {width:40%; float:left; } div.price-section__left.sin { width:100% !important; } div.price-section__right.des { width:86% !important; padding-left:0 !important; margin-top:12px; } .offerselect-list .offerselect-tile .right .price .price-section {border:0;} .offerselect-list .offerselect-tile .right .sx-gc-button-cta-list {min-width:140px;} .offerselect-list .offerselect-tile .right .price .price-section__button {float:left;} .offerselect-list .offerselect-tile .right .price .price-section--prpd {margin-top:0;} } @media screen and (min-width:990px) {  .fortyfive {width:45% !important; margin-left:16px !important;}  #t3-js-main div.price-section.price-section--flex.pnrec {width:45%; display:inline-block; margin-top:3px; border:0;padding:0; float:right;} #t3-js-main div.price-section.price-section--prpd.plrec {width:50%; display:inline-block; margin-top:3px; border:0;padding:0;}  #t3-js-main div.price-section__left.sin {float:right; width:100%; padding:0;} #t3-js-main div.price-section__right.des {float:left; width:100%; padding:0;} .offerselect-list .offerselect-tile .right .price .price-section__left__dayprice {font-size:23px;} .offerselect-list .offerselect-tile .right .price h4 {padding-bottom:10px;} .offerselect-list .offerselect-tile .right .price .price-section__left__overallprice {padding:12px 0;} .offerselect-list .offerselect-tile .left .carimage {width:240px; height:137px;} .offerselect-list .offerselect-tile .center {width: 25.3%;} .offerselect-list .offerselect-tile .right {width:42%; margin-left:1.5em;}    } .cien {width:100% !important; margin-top:10% !important;} .fifty {width:50% !important; float:left !important;} .cienleft {float:left !important; width:100% !important; margin-top:10% !important;}  ";
 
             var head = document.getElementsByTagName('head')[0];
             function addcss(css) {
@@ -22,6 +29,27 @@
             }
             addcss(mainCss);
         }, //pgCssDesktop
+
+        payOggi: function() {
+            console.info('%c payOggi \u221a', 'background:blue;color:white;');
+            //allitems
+            var alli = document.getElementById('sx-offerselect-offerlist-wrapper')
+            var allied = alli.children[5].children[0].children;
+            var aa,bb,cc;
+            alli.addEventListener('oggi',function(e) {
+                console.log(e);
+                for(var i=0; i < allied.length; i++) {
+                    //if paynow
+                    if(allied[i].children[2].children[0].children[0].children[0].children[2].innerText === "PAY NOW") {
+                        aa = allied[i].children[2].children[0].children[0].children[0].children[1].children[0].textContent;
+                        bb = aa.slice(3,aa.length);
+                        cc = bb.slice(0,bb.length - 7);
+                        reg = parseFloat(cc);
+                        console.log(reg);
+                    }//if
+                }//allied
+            })//alli
+        },
 
         listRO: function() {
             console.info('%c listRO \u221a', 'background:blue;color:white;');
@@ -137,11 +165,53 @@
 
             }//otherlist
 
-        }//listRO     
+        },//listRO     
+
+        pageNome: function() {
+            console.info('%c pageNome \u221a', 'background:blue;color:white;');
+            //page offerconfig
+                var panow = document.querySelector('.sx-res-config-save');
+                var palat = document.querySelector('.sx-res-config-extra-incl-highlight');
+                var fp,fg,fn,sav;
+                if(document.querySelector('.sx-res-config-save')) {
+                    if(panow.innerText == "CHEAPEST PRICE - YOU SAVE 5%") {
+                        console.log('paynow');
+                        //newprice
+                        fp = document.querySelector('.sx-res-config-cost.sx-res-config-cost-payment-list').innerText;
+                        fg = fp.slice(3,fp.length);
+                        fn = parseFloat(fg);
+                        sav = (reg - fn);
+                        panow.innerText = "SAVE " + sav + " EACH DAY";
+
+
+
+                    }
+
+                }//if paynow
+
+                if(document.querySelector('.sx-res-config-extra-incl-highlight')) {
+                    if(palat.innerText == "FREE CANCELLATION - STAY FLEXIBLE") {
+                        console.log('paylater');
+                    }
+
+                }//if paylater
+
+
+
+
+
+           
+
+
+
+
+        }//paynow
+
+
 
     };//SL.andRedEyelikeSixt
    (function _RE() {
-        if (window._satellite.data.URI === "/php/reservation/offerselect") {
+        if (window.sitecatalyst_data.server === "www.sixt.com") {
             try {
                 SL.andRedEyelikeSixt.init();
             } 
