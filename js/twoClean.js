@@ -1,4 +1,3 @@
-/* _optimizely_evaluate=force */
 (function(andRedEyelikeSixt, undefined) {
     var $ = window.jQuery;
     var SL = {};
@@ -57,20 +56,14 @@
         },
 
         listRO: function() {
-            console.info('%c listRO \u221a', 'background:blue;color:white;');
             document.body.style.opacity = 0.0125;
-
             recommended();
             otherlist();
-
             function recommended() {
-                console.info('%c recommended \u221a', 'background:blue;color:white;');
-                //recommended slot
                 var rec = document.querySelector('.sx-res-offerselect-special-wrapper'); 
                 var pnow = rec.querySelector('.price-section.price-section--flex');
                 pnow.children[0].innerText = "SAVE 5% EACH DAY";
                 pnow.classList.add('pnrec');
-                //priceleft/priceright
                 var pleft1 = rec.querySelector('.price-section__left');
                 var pright1 = rec.querySelector('.price-section__right');
                 pleft1.classList.add('sin');
@@ -82,12 +75,8 @@
                 var pright2 = plat.querySelector('.price-section__right');
                 pleft2.classList.add('sin');
                 pright2.classList.add('des');
-
-            }//recommended
-
+            }
             function otherlist() {
-                console.info('%c otherlist \u221a', 'background:blue;color:white;');
-                //otherlist
                 var ol = new Promise(function(resolve,reject) {
                     setTimeout(function() {
                         ol = document.querySelectorAll('.sx-res-offerselect-wrapper.sx-res-offerlist-wrapper')[0].children[0].children;
@@ -98,10 +87,9 @@
                             reject(ol);
                         }
                     },650);
-                });//ol
+                });
 
                 ol.then(function(dat) {
-                    //fulfilled
                     for(var i=0; i<ol.length; i++) {
                         if(ol[i].children[2].children[0].children[0].children[0].children[0].innerText == "BEST PRICE RATE SELECTED!") {
                             ol[i].children[2].children[0].children[0].children[0].children[0].innerText = "SAVE 5% EACH DAY";
@@ -222,7 +210,7 @@
 
         }
 
-/* _optimizely_evaluate=safe */
+
 
     };//SL.andRedEyelikeSixt
    (function _RE() {

@@ -1,5 +1,6 @@
-/* _optimizely_evaluate=force */
+console.log('Experiment');
 (function(andRedEyelikeSixt, undefined) {
+
     var $ = window.jQuery;
     var SL = {};
     var reg,sav;
@@ -7,20 +8,20 @@
     SL.andRedEyelikeSixt = {
         init: function() { 
             this.pgCssDesktop();
-            if(window._satellite.data.URI === "/php/reservation/offerselect") {
-                this.listRO();
-                this.payOggi();
+            if(window.location.pathname == "/php/reservation/offerselect") {
+                SL.andRedEyelikeSixt.listRO();
+                SL.andRedEyelikeSixt.payOggi();
             }
-            else if(window._satellite.data.URI === "/php/reservation/offerconfig") {
-                this.pageNome();       
+            else if(window.location.pathname == "/php/reservation/offerconfig") {
+                SL.andRedEyelikeSixt.pageNome();       
             }
-            else if(window._satellite.data.URI === "/php/reservation/customerdetails") {
-                this.pageCust();
+            else if(window.location.pathname == "/php/reservation/customerdetails") {
+                SL.andRedEyelikeSixt.pageCust();
             }   
         },
         //init
 
-        pgCssDesktop: function() {
+      pgCssDesktop: function() {
             console.info('%c pgCssDesktop \u221a', 'background:blue;color:white;');
             //@990px min-width mediaQuerie
             var mainCss = "@media screen and (max-width:380px) { .fortyfive {width:45% !important; margin-left:0px !important;} span.price-section__left__dayprice {font-size:22px !important;} .offerselect-list .offerselect-tile .right .price h4 { font-size: 14px !important;}  .offerselect-list .offerselect-tile .right .sx-gc-button-cta-list { min-width:130px !important; }   } @media screen and (max-width:650px) { div.price-section.price-section--flex.pnrec {width:40%; float:right; margin-right:24px;  } div.price-section.price-section--prpd.plrec {width:40%; float:left; } div.price-section__left.sin { width:100% !important; } div.price-section__right.des { width:86% !important; padding-left:0 !important; margin-top:12px; } .offerselect-list .offerselect-tile .right .price .price-section {border:0;} .offerselect-list .offerselect-tile .right .sx-gc-button-cta-list {min-width:140px;} .offerselect-list .offerselect-tile .right .price .price-section__button {float:left;} .offerselect-list .offerselect-tile .right .price .price-section--prpd {margin-top:0;} } @media screen and (min-width:990px) {  .fortyfive {width:45% !important; margin-left:16px !important;}  #t3-js-main div.price-section.price-section--flex.pnrec {width:45%; display:inline-block; margin-top:3px; border:0;padding:0; float:right;} #t3-js-main div.price-section.price-section--prpd.plrec {width:50%; display:inline-block; margin-top:3px; border:0;padding:0;}  #t3-js-main div.price-section__left.sin {float:right; width:100%; padding:0;} #t3-js-main div.price-section__right.des {float:left; width:100%; padding:0;} .offerselect-list .offerselect-tile .right .price .price-section__left__dayprice {font-size:23px;} .offerselect-list .offerselect-tile .right .price h4 {padding-bottom:10px;} .offerselect-list .offerselect-tile .right .price .price-section__left__overallprice {padding:12px 0;} .offerselect-list .offerselect-tile .left .carimage {width:240px; height:137px;} .offerselect-list .offerselect-tile .center {width: 25.3%;} .offerselect-list .offerselect-tile .right {width:42%; margin-left:1.5em;}    } .cien {width:100% !important; margin-top:10% !important;} .fifty {width:50% !important; float:left !important;} .cienleft {float:left !important; width:100% !important; margin-top:10% !important;} .rojo {text-transform: uppercase; color: #ff7d19;}  ";
@@ -34,6 +35,24 @@
             }
             addcss(mainCss);
         }, //pgCssDesktop
+
+        cookieJar: {
+            setCookie: function(cname,cvalue,exdays) {
+                console.info('%c setscookie \u221a', 'background:blue;color:white;');
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                var expires = "expires=" + d.toGMTString();
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+            },
+
+            getCookie: function(name) {
+              console.info('%c setscookie \u221a', 'background:blue;color:white;');
+              var value = "; " + document.cookie;
+              var parts = value.split("; " + name + "=");
+              if (parts.length == 2) return parts.pop().split(";").shift();
+            }
+
+        },//cookiejar
 
         payOggi: function() {
             console.info('%c payOggi \u221a', 'background:blue;color:white;');
@@ -51,6 +70,8 @@
                         cc = bb.slice(0,bb.length - 7);
                         reg = parseFloat(cc);
                         console.log(reg);
+                        this.cookieJar.setCookie('reg',reg);
+                        
                     }//if
                 }//allied
             });//alli
@@ -60,7 +81,6 @@
             console.info('%c listRO \u221a', 'background:blue;color:white;');
             document.body.style.opacity = 0.0125;
 
-            recommended();
             otherlist();
 
             function recommended() {
@@ -87,23 +107,30 @@
 
             function otherlist() {
                 console.info('%c otherlist \u221a', 'background:blue;color:white;');
-                //otherlist
-                var ol = new Promise(function(resolve,reject) {
-                    setTimeout(function() {
-                        ol = document.querySelectorAll('.sx-res-offerselect-wrapper.sx-res-offerlist-wrapper')[0].children[0].children;
-                        if(ol.length >= 1) {
-                            resolve(ol);
-                        }
-                        else {
-                            reject(ol);
-                        }
-                    },650);
-                });//ol
+                var ol = new XMLHttpRequest();
+                ol.onreadystatechange = function() {
+                    if(ol.readyState == 4 && ol.status == 200) {
+                        setTimeout(function() {
+                            ol = document.querySelectorAll('.sx-res-offerselect-wrapper.sx-res-offerlist-wrapper')[0].children[0].children;
+                            if(ol.length >= 1) {
+                                loopup();
+                            }//if
 
-                ol.then(function(dat) {
-                    //fulfilled
+                        },2000);
+                        
+                        console.log(ol);
+                        
+                    }
+                };
+                ol.open("POST","https://www.sixt.com/php/reservation/offerselect",true);
+                ol.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                ol.send();
+
+
+                function loopup() {
                     for(var i=0; i<ol.length; i++) {
-                        if(ol[i].children[2].children[0].children[0].children[0].children[0].innerText == "BEST PRICE RATE SELECTED!") {
+                        console.log(ol[i]);
+                        if(ol[i].children[2].children[0].children[0].children[0].children[0].innerText == "OUR LOWEST RATE") {
                             ol[i].children[2].children[0].children[0].children[0].children[0].innerText = "SAVE 5% EACH DAY";
                         }
 
@@ -157,18 +184,18 @@
 
                     }//forloop
 
-                    function lights() {
-                        console.info('%c lights \u221a', 'background:blue;color:white;');
-                        document.body.style.opacity = 1;
-                    }
-                    //turn lights on
-                    lights();
 
-                }).catch(function(err) {
-                    console.log(err);
-                });
+                }//loopup
+                    
 
             }//otherlist
+            recommended();
+            function lights() {
+                    console.info('%c lights \u221a', 'background:blue;color:white;');
+                    document.body.style.opacity = 1;
+            }
+            //turn lights on
+            lights();
 
         },//listRO     
 
@@ -183,11 +210,19 @@
                     if(panow.innerText == "CHEAPEST PRICE - YOU SAVE 5%") {
                         console.log('paynow');
                         //newprice
+                 
                         panow.classList.add('rojo');
                         fp = document.querySelector('.sx-res-config-cost.sx-res-config-cost-payment-list').innerText;
                         fg = fp.slice(3,fp.length);
                         fn = parseFloat(fg);
-                        sav = (reg - fn);
+                        reg = this.cookieJar.getCookie(reg);
+                        if(typeof reg === 'undefined') {
+                            sav = "5%";
+                        }
+                        else {
+                            sav = reg -fn;
+                        }
+                        
                         panow.innerText = "SAVE " + sav + " EACH DAY";
                     }
 
@@ -222,11 +257,11 @@
 
         }
 
-/* _optimizely_evaluate=safe */
+
 
     };//SL.andRedEyelikeSixt
    (function _RE() {
-        if (window.sitecatalyst_data.server === "www.sixt.com") {
+        if (window.jQuery !== undefined) {
             try {
                 SL.andRedEyelikeSixt.init();
             } 
@@ -235,7 +270,7 @@
             }
         }//if 
         else { 
-            setTimeout(_RE, 25); 
+            setTimeout(_RE, 185); 
         }//else
            
     })();//_RE
