@@ -14,10 +14,7 @@
 - __emphasize savings on Pay Now__ will increase Pay Now clicks and decrease Pay Later clicks
 
 ### targeting :boom:
-https://www.sixt.com/php/reservation/offerselect
-https://www.sixt.com/php/reservation/directoffer
-https://www.sixt.com/php/reservation/offerconfig (copy change to follow through to this page)
-https://www.sixt.com/php/reservation/customerdetails (copy change to follow through to this page)
+- see TestPlan
 
 ### devices      
 - desktop, tablet and mobile
