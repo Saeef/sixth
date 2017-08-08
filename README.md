@@ -21,7 +21,7 @@
 - chrome, firefox, safari, IE10
 
 ### other     
-- Include both cars and trucks. Same URL, but pages can be identified by:				
+- Include both cars and trucks. Same URL, but pages can be identified by:    				
 	ctyp = P      //for cars
 	ctyp = L      //for trucks
 - Reliable identifier for test page:
