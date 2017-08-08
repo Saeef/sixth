@@ -21,13 +21,11 @@
 - chrome, firefox, safari, IE10
 
 ### other     
-- Include both cars and trucks. Same URL, but pages can be identified by:
-					
+- Include both cars and trucks. Same URL, but pages can be identified by:				
 	ctyp = P      //for cars
 	ctyp = L      //for trucks
 
 - Reliable identifier for test page:
-
 	pn = "Reservation-Pkw-Offerselect"
 
 - Results with one single price option to be included .          
@@ -36,7 +34,6 @@
 __sitecatalyst_data object:__           
 - sitecatalyst_data.tpl => "offerselect"  :snail:      
 - sitecatalyst_data.channel => "Reservation-Pkw"  :snail:      
-- sitecatalyst_data.server => "www.sixt.com" :snail:        
 - sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect" :snail:      
 
 ___window_satellite object:___ 
