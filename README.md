@@ -24,10 +24,8 @@
 - Include both cars and trucks. Same URL, but pages can be identified by:				
 	ctyp = P      //for cars
 	ctyp = L      //for trucks
-
 - Reliable identifier for test page:
 	pn = "Reservation-Pkw-Offerselect"
-
 - Results with one single price option to be included .          
 
 ### notes
