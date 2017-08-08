@@ -21,19 +21,16 @@
 - chrome, firefox, safari, IE10
 
 ### other     
-- Include both cars and trucks. Same URL, but pages can be identified by:    				
-	ctyp = P      //for cars
-	ctyp = L      //for trucks
-- Reliable identifier for test page:
-	pn = "Reservation-Pkw-Offerselect"
-- Results with one single price option to be included .          
+- Include both cars and trucks. Pages: ctyp = P(for cars), ctyp = L(for trucks)              		      
+- Reliable identifier for test page:       
+	pn = "Reservation-Pkw-Offerselect"      
+- Results with one single price option to be included .                 
 
 ### notes
 __sitecatalyst_data object:__           
 - sitecatalyst_data.tpl => "offerselect"  :snail:      
 - sitecatalyst_data.channel => "Reservation-Pkw"  :snail:      
 - sitecatalyst_data.pagename => "Reservation-Pkw-Offerselect" :snail:      
-
 ___window_satellite object:___ 
 - window._satellite.browserInfo.browser => "Chrome"  :snake:    
 - window._satellite.data.URI => "/php/reservation/offerselect"  :snake:      
